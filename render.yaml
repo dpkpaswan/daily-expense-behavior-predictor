@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: expense-stress-forecaster
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app/dashboard.py --server.headless true --server.address 0.0.0.0 --server.port $PORT
+    autoDeploy: true
